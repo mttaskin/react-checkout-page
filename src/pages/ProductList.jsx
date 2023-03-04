@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 import CardTotal from "../components/CardTotal";
 import axios from "axios";
@@ -12,11 +12,20 @@ const ProductList = () => {
 
 const [products, setProducts] = useState([])
 
-const getproducts =async () =>{
+const getProducts =async () =>{
    try{
     const {data}= await axios(url)
-   }
-}
+    setProducts(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+   
+
 
 
   return (
