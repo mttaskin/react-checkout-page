@@ -12,15 +12,15 @@ const CardTotal = ({products}) => {
     <table className="table w-100">
       <tbody>
         <tr className="text-end">
-          <th className="text-start">{subTotal.toFixed}</th>
+          <th className="text-start">Subtotal</th>
           <td>
-            $<span className="subtotal"></span>
+            $<span className="subtotal">{subTotal.toFixed(2)}</span>
           </td>
         </tr>
         <tr className="text-end">
           <th className="text-start">Tax(18%)</th>
           <td>
-            $<span className="tax">{(subTotal*taxRate).toFixed}</span>
+            $<span className="tax">{(subTotal*taxRate).toFixed(2)}</span>
           </td>
         </tr>
         <tr className="text-end">
@@ -30,10 +30,10 @@ const CardTotal = ({products}) => {
           </td>
         </tr>
         <tr className="text-end">
-          <th className="text-start">{(subTotal+shipping+(subTotal*taxRate)).toFixed}</th>
+          <th className="text-start">{(subTotal+shipping+(subTotal*taxRate)).toFixed(2)}</th>
           <td>
             $
-            <span className="total">
+            <span className="total">{(subTotal + shipping + taxRate*subTotal).toFixed(2)}
             </span>
           </td>
         </tr>
