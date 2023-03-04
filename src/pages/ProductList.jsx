@@ -1,11 +1,24 @@
 
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import CardTotal from "../components/CardTotal";
+import axios from "axios";
 
 
 
 const ProductList = () => {
+
+  const url=process.env.REACT_APP_API_URL
+
+const [products, setProducts] = useState([])
+
+const getproducts =async () =>{
+   try{
+    const {data}= await axios(url)
+   }
+}
+
+
   return (
     <div className="container mt-3">
       <div className={"bg-light d-sm-block d-md-flex"}>
