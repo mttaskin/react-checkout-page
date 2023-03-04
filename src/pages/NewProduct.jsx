@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import ProductForm from '../components/ProductForm';
 import axios from 'axios';
@@ -16,6 +17,7 @@ const NewProduct = () => {
 
   const handleChange = (e)=>{
     setFormData({...formData, [e.target.id]:e.target.value })
+    console.log({ [e.target.id]: e.target.value });
   }
 
   const handleSubmit = async (e) =>{
@@ -29,12 +31,14 @@ const NewProduct = () => {
     }
   }
 
+
   return (
     <div className="container">
       <ProductForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         formData={formData}
+        text="New"
       />
     </div>
   );
