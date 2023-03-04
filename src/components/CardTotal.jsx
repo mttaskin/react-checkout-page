@@ -3,7 +3,7 @@ import React from "react";
 const taxRate = 0.18;
 const shipping = 25;
 
-const CardTotal = () => {
+const CardTotal = ({products}) => {
   
   
   

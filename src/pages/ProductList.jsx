@@ -8,7 +8,7 @@ import axios from "axios";
 
 const ProductList = () => {
 
-  const url=process.env.REACT_APP_API_URL
+  const url=process.env.REACT_APP_API_URL;
 
 const [products, setProducts] = useState([])
 const [loading, setLoading] = useState(true)
@@ -43,11 +43,11 @@ const getProducts =async () =>{
         <>
           <article id="product-panel" className="col-md-5">
             {products.map((item)=>{
-              return <ProductCard item={item}/>
+              return <ProductCard key={item.id} item={item}/>
             })}
           </article>
           <article className="col-md-5 m-3">
-            <CardTotal />
+            <CardTotal products={products} />
           </article>
         </>
         : (!errorState && 
